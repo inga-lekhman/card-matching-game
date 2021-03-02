@@ -1,0 +1,19 @@
+<app-header formIsPresent="true"></app-header>
+<main>
+  <div class="container" fxLayout="column" fxLayoutGap="30px">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div>current tries: <strong>{{triesCount}}</strong></div>
+      <div>
+        <span>Best</span>
+        <strong>{{ bestTriesCount }}</strong>
+      </div>
+      <button mat-raised-button (click)="restart()">Restart</button>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="15px">
+      <app-card
+        fxFlex="23"
+        *ngFor="let c of cards; let idx=index" [data]="c" (cardClicked)="cardClicked(idx)">
+      </app-card>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,18 @@
+<form #startGameForm="ngForm"
+      [formGroup]="startForm"
+      (ngSubmit)="onSubmit()"
+      class="form"
+      [fxLayout]="direction"
+      fxLayoutAlign="center center"
+      fxLayoutGap="15px">
+  <label>Desk Size</label>
+  <mat-form-field appearance="fill">
+    <mat-select formControlName="size" [(ngModel)]="selected">
+      <mat-option *ngFor="let size of tableSizes" [value]="size">
+        {{size}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-stroked-button class="red-btn" type="submit">START NEW GAME</button>
+</form>
+
